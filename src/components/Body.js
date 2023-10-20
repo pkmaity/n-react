@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import restaurantList from "../utils/mockData";
 import RestaurantCard from "./RestaurantCard";
 
