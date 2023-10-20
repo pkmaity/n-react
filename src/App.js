@@ -4,6 +4,8 @@ import Body from "./components/Body";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Layout from "./components/Layout";
 import CatList from "./components/CatTodo/CatList";
+import CatInfo from "./components/CatTodo/CatInfo";
+import CatLayout from "./components/CatTodo/CatLayout";
 
 // const AppLayout = () => {
 //     return (
@@ -24,9 +26,19 @@ const router = createBrowserRouter([
                 element: <Body />
             },
             {
-                path: 'todo',
-                element: <CatList />
-            }
+                path: 'cat',
+                element: <CatLayout />,
+                children: [
+                    {
+                        path: 'list',
+                        element: <CatList />,
+                    },
+                    {
+                        path: 'info/:catId',
+                        element: <CatInfo />
+                    }
+                ]
+            },
         ]
     }
 ])
